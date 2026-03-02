@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        /* remove default body margin to avoid extra page offset */
+        body { margin: 0; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px; /* keep as required */
+            background-color: #F0F4F8;
+            font-family: 'Nunito', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .blob {
+            position: absolute;
+            background-color: #4FD1C5;
+            opacity: 0.1;
+            border-radius: 50%;
+            z-index: 0;
+        }
+        /* slightly smaller and moved blobs to avoid extending page height */
+        .blob-1 { width: 520px; height: 520px; top: -160px; left: -160px; }
+        .blob-2 { width: 320px; height: 320px; bottom: -80px; right: -80px; }
+        .card {
+            background: white;
+            /* keep top padding (60px) to preserve title spacing, reduce bottom and sides */
+            padding: 60px 40px 36px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: center;
+            z-index: 1;
+            max-width: 900px;
+        }
+        h1 {
+            font-size: 64px;
+            font-weight: 800;
+            color: #2D3748;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #4A5568;
+            /* reduced spacing below subtitle */
+            margin-bottom: 24px;
+        }
+        .info {
+            font-size: 20px;
+            color: #4A5568;
+            margin-top: 12px;
+        }
+        .prof {
+            font-weight: 800;
+            color: #2D3748;
+        }
+        .students-tag {
+            position: absolute;
+            /* bring tag a bit higher to reduce overall height */
+            bottom: 24px;
+            right: 40px;
+            background-color: #4FD1C5;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(79, 209, 197, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        
+        <div class="card">
+            <h1>Verbos de Ligação</h1>
+            <h2>A Ponte entre o Sujeito e o Estado</h2>
+            <div class="info">
+                <p>Disciplina: Língua Portuguesa</p>
+                <p class="prof">Professora: Joana</p>
+            </div>
+        </div>
+
+        <div class="students-tag">
+            Rui Ferreira • Pedro Henrique • Ezequiel Rocha
+        </div>
+    </div>
+</body>
+</html>
+
