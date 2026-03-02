@@ -3,11 +3,20 @@
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
     <style>
-        /* remove default body margin to avoid extra page offset */
-        body { margin: 0; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #F0F4F8; /* mesma cor do slide para evitar transição brusca */
+        }
+
         .slide-container {
             width: 1280px;
-            min-height: 720px; /* keep as required */
+            min-height: 720px;
             background-color: #F0F4F8;
             font-family: 'Nunito', sans-serif;
             display: flex;
@@ -16,62 +25,93 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            margin: 0 auto; /* centraliza na viewport caso a tela seja maior */
         }
+
+        /* Blobs com opacidade um pouco mais forte e cores harmoniosas */
         .blob {
             position: absolute;
             background-color: #4FD1C5;
-            opacity: 0.1;
+            opacity: 0.2;
             border-radius: 50%;
             z-index: 0;
         }
-        /* slightly smaller and moved blobs to avoid extending page height */
-        .blob-1 { width: 520px; height: 520px; top: -160px; left: -160px; }
-        .blob-2 { width: 320px; height: 320px; bottom: -80px; right: -80px; }
+
+        .blob-1 {
+            width: 520px;
+            height: 520px;
+            top: -160px;
+            left: -160px;
+        }
+
+        .blob-2 {
+            width: 320px;
+            height: 320px;
+            bottom: -80px;
+            right: -80px;
+        }
+
         .card {
             background: white;
-            /* keep top padding (60px) to preserve title spacing, reduce bottom and sides */
-            padding: 60px 40px 36px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            padding: 56px 48px 48px; /* mais equilibrado */
+            border-radius: 32px;      /* bordas mais suaves */
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(79, 209, 197, 0.1);
             text-align: center;
             z-index: 1;
             max-width: 900px;
+            width: fit-content;
         }
+
         h1 {
             font-size: 64px;
             font-weight: 800;
-            color: #2D3748;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            color: #1A202C;           /* tom mais escuro para melhor contraste */
+            margin-bottom: 16px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;  /* leve ajuste para títulos grandes */
         }
+
         h2 {
             font-size: 32px;
             font-weight: 600;
-            color: #4A5568;
-            /* reduced spacing below subtitle */
-            margin-bottom: 24px;
+            color: #2D3748;
+            margin-bottom: 32px;
+            line-height: 1.3;
         }
+
         .info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
             font-size: 20px;
             color: #4A5568;
-            margin-top: 12px;
         }
+
+        .info p {
+            margin: 0;                /* remove espaços extras dos parágrafos */
+        }
+
         .prof {
             font-weight: 800;
             color: #2D3748;
+            margin-top: 4px;          /* separação sutil */
         }
+
         .students-tag {
             position: absolute;
-            /* bring tag a bit higher to reduce overall height */
-            bottom: 24px;
+            bottom: 28px;
             right: 40px;
             background-color: #4FD1C5;
             color: white;
-            padding: 10px 22px;
-            border-radius: 50px;
+            padding: 10px 24px;
+            border-radius: 40px;
             font-weight: 600;
             font-size: 18px;
-            box-shadow: 0 4px 10px rgba(79, 209, 197, 0.3);
+            box-shadow: 0 8px 18px rgba(79, 209, 197, 0.4);
+            z-index: 2;                /* garante que fique acima de qualquer elemento */
+            letter-spacing: 0.3px;
+            backdrop-filter: blur(2px); /* efeito moderno opcional */
+            border: 1px solid rgba(255,255,255,0.3);
         }
     </style>
 </head>
@@ -95,4 +135,3 @@
     </div>
 </body>
 </html>
-
