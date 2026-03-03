@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verbos de Ligação - Guia Completo</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/29/29302.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --deep-purple: #1e1b4b;
+            --electric-blue: #3b82f6;
+            --aqua: #06b6d4;
+            --text-dark: #0f172a;
+            --bg-body: #eef2ff;
+            --card-bg: #ffffff;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+        }
+
+        [data-theme="dark"] {
+            --deep-purple: #0f172a;
+            --electric-blue: #60a5fa;
+            --aqua: #22d3ee;
+            --text-dark: #f1f5f9;
+            --bg-body: #020617;
+            --card-bg: #1e293b;
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--electric-blue) var(--bg-body);
+        }
+
+        *::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: var(--bg-body);
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: var(--electric-blue);
+            border-radius: 4px;
+        }
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            background: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.85;
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            color: var(--deep-purple);
+            margin-top: 30px;
+        }
+
+        [data-theme="dark"] h1,
+        [data-theme="dark"] h2,
+        [data-theme="dark"] h3,
+        [data-theme="dark"] h4,
+        [data-theme="dark"] h5,
+        [data-theme="dark"] h6 {
+            color: var(--electric-blue);
+        }
+
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 6px;
+            background: linear-gradient(to right, var(--electric-blue), var(--aqua), var(--accent-green));
+            z-index: 10000;
+        }
+
+        .hero-thesis {
+            background: linear-gradient(135deg, var(--deep-purple), #312e81);
+            color: white;
+            padding: 140px 0;
+            border-bottom: 8px solid var(--electric-blue);
+            margin-bottom: 70px;
+        }
+
+        .academic-section {
+            background: var(--card-bg);
+            padding: 60px;
+            margin-bottom: 60px;
+            border-radius: 8px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid var(--electric-blue);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .academic-section:hover {
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-number {
+            color: var(--electric-blue);
+            font-weight: 800;
+            font-size: 4.5rem;
+            opacity: 0.08;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+        }
+
+        .section-title {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--electric-blue);
+        }
+
+        .quote-block {
+            border-left: 6px solid var(--electric-blue);
+            margin: 35px 0;
+            font-style: italic;
+            background: rgba(59, 130, 246, 0.05);
+            padding: 30px;
+            font-size: 1.08rem;
+            border-radius: 4px;
+            line-height: 1.95;
+        }
+
+        .example-box {
+            background: rgba(6, 182, 212, 0.08);
+            border: 2px solid var(--aqua);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.98rem;
+            line-height: 1.8;
+        }
+
+        .example-label {
+            font-weight: 700;
+            color: var(--electric-blue);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            font-size: 0.88rem;
+            letter-spacing: 1px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            font-size: 0.97rem;
+        }
+
+        .comparison-table th {
+            background: var(--electric-blue);
+            color: white;
+            padding: 16px;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.87rem;
+            letter-spacing: 0.5px;
+        }
+
+        .comparison-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: rgba(59, 130, 246, 0.03);
+        }
+
+        .quiz-section {
+            background: rgba(16, 185, 129, 0.05);
+            padding: 45px;
+            margin: 50px 0;
+            border-radius: 8px;
+            border: 2px solid var(--accent-green);
+        }
+
+        .quiz-title {
+            color: var(--accent-green);
+            margin-bottom: 28px;
+            font-size: 1.18rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .option-card {
+            border: 2px solid #cbd5e1;
+            padding: 18px;
+            margin-bottom: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 6px;
+            background: var(--card-bg);
+            font-size: 0.97rem;
+        }
+
+        .option-card:hover {
+            background: rgba(59, 130, 246, 0.05);
+            border-color: var(--electric-blue);
+            transform: translateX(5px);
+        }
+
+        .option-card strong {
+            color: var(--electric-blue);
+            font-weight: 800;
+            margin-right: 8px;
+        }
+
+        .correct-ans {
+            background: #dcfce7 !important;
+            border-color: var(--accent-green) !important;
+            color: #14532d !important;
+        }
+
+        .correct-ans strong {
+            color: #14532d !important;
+        }
+
+        .wrong-ans {
+            background: #fee2e2 !important;
+            border-color: var(--accent-red) !important;
+            color: #7f1d1d !important;
+        }
+
+        .wrong-ans strong {
+            color: #7f1d1d !important;
+        }
+
+        .quiz-feedback {
+            padding: 18px;
+            margin-top: 22px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.97rem;
+            animation: slideIn 0.4s ease;
+            line-height: 1.7;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .fab {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            background: var(--deep-purple);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: var(--deep-purple);
+            color: white;
+            padding: 70px 0;
+            margin-top: 70px;
+            border-top: 6px solid var(--electric-blue);
+        }
+
+        .highlight-box {
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid var(--accent-green);
+            padding: 22px;
+            margin: 25px 0;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.97rem;
+            line-height: 1.8;
+        }
+
+        em {
+            color: var(--electric-blue);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        strong {
+            color: var(--deep-purple);
+            font-weight: 700;
+        }
+
+        [data-theme="dark"] strong {
+            color: var(--electric-blue);
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--electric-blue), transparent);
+            margin: 60px 0;
+        }
+
+        p {
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .academic-section {
+                padding: 35px;
+            }
+
+            .hero-thesis {
+                padding: 90px 0;
+            }
+
+            h1 {
+                font-size: 1.9rem !important;
+            }
+
+            .section-number {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+    <div id="progress-bar"></div>
+
+    <div class="fab-container">
+        <button class="fab" id="theme-toggle" title="Tema"><i class="bi bi-brightness-high"></i></button>
+        <button class="fab" onclick="window.print()" title="Imprimir"><i class="bi bi-file-earmark-pdf"></i></button>
+        <button class="fab" onclick="scrollToTop()" title="Topo"><i class="bi bi-arrow-up"></i></button>
+    </div>
+
+    <header class="hero-thesis text-center">
+        <div class="container">
+            <h1 class="display-2 fw-bold mb-3">Verbos de Ligação</h1>
+            <p class="h4 mb-4">Guia Completo da Língua Portuguesa</p>
+            <div class="mt-4 p-4 border border-light" style="border-radius: 8px; background: rgba(255,255,255,0.1); max-width: 700px; margin: 0 auto;">
+                <strong>Conteúdo:</strong> Definição, características, tipos principais, exemplos práticos e exercícios interativos para fixação do aprendizado.
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section class="academic-section" id="section-1">
+            <span class="section-number">I</span>
+            <h2 class="section-title">O que é um Verbo de Ligação?</h2>
+            <p>
+                Um verbo de ligação é aquele que não descreve uma ação ou movimento, mas estabelece uma relação entre o sujeito e uma qualidade, característica ou estado. Diferente dos verbos nocionais (como <em>correr</em>, <em>comer</em>, <em>construir</em>), que carregam significado próprio, o verbo de ligação é semanticamente vazio — sua única função é conectar o sujeito ao seu atributo.
+            </p>
+            <p>
+                A estrutura básica é simples: Sujeito + Verbo de Ligação + Predicativo. O predicativo é a parte mais importante da frase, pois nele reside a informação principal. O verbo apenas estabelece a ponte entre o sujeito e essa informação. Sem o predicativo, a frase fica incompleta e sem sentido.
+            </p>
+            <div class="example-box">
+                <div class="example-label">Exemplos Básicos:</div>
+                <p>• "Maria <strong>é</strong> professora." (identidade profissional)</p>
+                <p>• "O céu <strong>está</strong> azul." (estado momentâneo)</p>
+                <p>• "Ela <strong>ficou</strong> triste." (mudança de estado)</p>
+                <p>• "Ele <strong>parece</strong> cansado." (aparência)</p>
+            </div>
+            <div class="quote-block">
+                "O verbo de ligação é a ponte invisível que une o sujeito à sua qualidade, permitindo que a linguagem descreva não apenas o que as coisas fazem, mas o que elas são."
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="academic-section" id="section-2">
+            <span class="section-number">II</span>
+            <h2 class="section-title">Os Dois Verbos Principais: Ser e Estar</h2>
+            <p>
+                Os verbos "ser" e "estar" são os verbos de ligação mais importantes e frequentes da língua portuguesa. Embora ambos funcionem como ligação, eles expressam significados muito diferentes e sua escolha é crucial para a clareza e a precisão da comunicação.
+            </p>
+            <p>
+                <strong>SER</strong> é usado para expressar essência, identidade, características permanentes ou duradouras, profissão, origem e definições. Quando dizemos "Ele é inteligente", estamos afirmando que a inteligência é uma característica fundamental, uma qualidade que define a pessoa. <strong>ESTAR</strong>, por sua vez, é usado para expressar estado momentâneo, localização, condição física ou emocional passageira. Quando dizemos "Ele está cansado", indicamos um estado transitório, algo que pode mudar em breve.
+            </p>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Verbo</th>
+                        <th>Uso Principal</th>
+                        <th>Exemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>SER</strong></td>
+                        <td>Essência, identidade, profissão, origem, características permanentes</td>
+                        <td>"Ele é médico" / "Ela é inteligente" / "Nós somos portugueses"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ESTAR</strong></td>
+                        <td>Localização, estado emocional, condição física, situação momentânea</td>
+                        <td>"Ele está em Lisboa" / "Ela está feliz" / "Ele está doente"</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="highlight-box">
+                <strong>Diferença Crucial:</strong> "Ele é triste" significa que a tristeza é uma característica permanente de sua personalidade. "Ele está triste" significa que ele sente tristeza neste momento, mas isso pode mudar. A escolha entre ser e estar muda completamente o significado da frase.
+            </div>
+            <p>
+                Há casos onde a distinção é particularmente importante. Considere: "A água é fria" (característica natural da água) versus "A água está fria" (a água está em temperatura baixa neste momento). Ou: "Ele é alegre" (traço de personalidade) versus "Ele está alegre" (estado emocional atual). Dominar essa distinção é essencial para falar português com precisão.
+            </p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="academic-section" id="section-3">
+            <span class="section-number">III</span>
+            <h2 class="section-title">Outros Verbos de Ligação Importantes</h2>
+            <p>
+                Além de "ser" e "estar", existem vários outros verbos que funcionam como ligação. Cada um deles expressa um tipo específico de relação entre o sujeito e o predicativo, adicionando nuances semânticas importantes à língua.
+            </p>
+            <p>
+                <strong>FICAR</strong> é usado para expressar mudança de estado, geralmente súbita ou inesperada. Diferente de "tornar-se", que sugere um processo gradual, "ficar" indica uma transformação rápida. "Ela ficou furiosa" sugere que a fúria veio rapidamente, talvez em reação a algo. <strong>TORNAR-SE</strong> expressa transformação gradual, evolução ou desenvolvimento ao longo do tempo. "Ele tornou-se um grande advogado" indica um processo de crescimento e aprendizado.
+            </p>
+            <p>
+                <strong>PARECER</strong> é usado quando queremos indicar aparência ou semelhança, não necessariamente a realidade. "Ele parece feliz" não afirma que ele é feliz, apenas que dá a impressão de ser. <strong>PERMANECER</strong> e <strong>CONTINUAR</strong> são verbos de continuidade, indicando que um estado anterior se mantém. "Ela permaneceu calada" significa que ela continuou em silêncio. "Ele continua doente" indica que a doença persiste.
+            </p>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Verbo</th>
+                        <th>Tipo de Estado</th>
+                        <th>Exemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>FICAR</strong></td>
+                        <td>Mudança de estado súbita ou resultativa</td>
+                        <td>"Ela ficou brava" / "Ele ficou pálido"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TORNAR-SE</strong></td>
+                        <td>Transformação gradual e processual</td>
+                        <td>"Ela tornou-se uma excelente professora" / "Ele tornou-se sábio"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PARECER</strong></td>
+                        <td>Aparência, semelhança, impressão</td>
+                        <td>"Ele parece cansado" / "Ela parece preocupada"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PERMANECER</strong></td>
+                        <td>Continuidade, persistência de estado</td>
+                        <td>"Ela permaneceu fiel" / "Ele permaneceu impassível"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CONTINUAR</strong></td>
+                        <td>Prolongamento de estado anterior</td>
+                        <td>"Ele continua doente" / "Ela continua triste"</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="academic-section" id="section-4">
+            <span class="section-number">IV</span>
+            <h2 class="section-title">Verbos que Funcionam como Ligação em Contextos Específicos</h2>
+            <p>
+                Alguns verbos podem funcionar como ligação dependendo do contexto e do tipo de complemento que os acompanha. Esses verbos são interessantes porque demonstram que a classificação de um verbo não é fixa — ela depende de como o verbo é usado na frase.
+            </p>
+            <p>
+                O verbo <strong>ANDAR</strong> é um exemplo clássico. Quando dizemos "Ele anda rapidamente", o verbo é intransitivo e descreve uma ação. Mas quando dizemos "Ele anda preocupado", o verbo funciona como ligação, conectando o sujeito ao estado "preocupado". Similarmente, <strong>VIVER</strong> pode ser intransitivo ("Ele vive em Lisboa") ou de ligação ("Ela vive feliz").
+            </p>
+            <p>
+                Outros verbos que podem funcionar como ligação em contextos apropriados incluem: <strong>SAIR</strong> ("Ele saiu furioso"), <strong>ENTRAR</strong> ("Ela entrou assustada"), <strong>CHEGAR</strong> ("Ele chegou cansado"), <strong>PARTIR</strong> ("Ela partiu triste"), e <strong>ACABAR</strong> ("Ele acabou cansado"). Em todos esses casos, o verbo estabelece uma relação entre o sujeito e um estado ou qualidade, em vez de descrever uma ação.
+            </p>
+            <div class="example-box">
+                <div class="example-label">Exemplos de Verbos Ambíguos:</div>
+                <p><strong>ANDAR:</strong></p>
+                <p>• Intransitivo: "Ele anda rapidamente." (ação)</p>
+                <p>• De Ligação: "Ele anda preocupado." (estado)</p>
+                <p><strong>VIVER:</strong></p>
+                <p>• Intransitivo: "Ela vive em São Paulo." (localização)</p>
+                <p>• De Ligação: "Ela vive feliz." (estado de vida)</p>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="academic-section" id="section-5">
+            <span class="section-number">V</span>
+            <h2 class="section-title">Predicado Nominal e Predicativo do Sujeito</h2>
+            <p>
+                Quando um verbo de ligação aparece em uma frase, ele cria uma estrutura sintática especial chamada de <strong>Predicado Nominal</strong>. Nesta estrutura, o núcleo informativo não é o verbo, mas sim o <strong>Predicativo do Sujeito</strong> — a palavra ou expressão que descreve a qualidade ou estado do sujeito.
+            </p>
+            <p>
+                O predicativo pode ser constituído por várias classes gramaticais. Um <strong>adjetivo</strong> é a forma mais comum: "O dia é bonito", "Ela está feliz". Um <strong>substantivo</strong> também pode funcionar como predicativo: "Pedro é médico", "Minha mãe é professora". <strong>Pronomes</strong> podem funcionar como predicativo: "O culpado sou eu", "A vencedora é ela". <strong>Numerais</strong> também podem: "Nós somos dez", "Eles eram vinte". Até mesmo <strong>sintagmas preposicionais</strong> podem funcionar como predicativo: "Este livro é de ficção científica", "Aquele carro é de meu pai".
+            </p>
+            <div class="example-box">
+                <div class="example-label">Exemplos de Diferentes Tipos de Predicativo:</div>
+                <p><strong>Adjetivo:</strong> "A noite é escura e misteriosa."</p>
+                <p><strong>Substantivo:</strong> "Meu pai é engenheiro civil."</p>
+                <p><strong>Pronome:</strong> "O responsável sou eu mesmo."</p>
+                <p><strong>Numeral:</strong> "Os participantes eram vinte e cinco."</p>
+                <p><strong>Sintagma Preposicional:</strong> "Este livro é de grande importância."</p>
+                <p><strong>Sintagma Adjetival:</strong> "Ela está muito mais confiante agora."</p>
+            </div>
+            <p>
+                A concordância é importante: o verbo de ligação deve concordar em número e pessoa com o sujeito. "Eu sou", "Tu és", "Ele é", "Nós somos", "Vós sois", "Eles são". O predicativo, por sua vez, concorda com o sujeito em gênero e número quando é um adjetivo ou um substantivo que funciona como adjetivo. "A menina é bonita" (feminino singular), "Os meninos são bonitos" (masculino plural).
+            </p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="academic-section" id="section-6">
+            <span class="section-number">VI</span>
+            <h2 class="section-title">Exercícios Interativos de Fixação</h2>
+            
+            <div class="quiz-section">
+                <h3 class="quiz-title"><i class="bi bi-question-circle"></i> Questão 1: Identificação de Verbo de Ligação</h3>
+                <p class="mb-3">Qual alternativa contém um verbo de ligação exercendo plenamente sua função?</p>
+                
+                <div id="quiz-area-1">
+                    <div class="option-card" onclick="checkQuiz(this, false, 1)">
+                        <strong>A)</strong> Os operários andavam rapidamente para terminar a obra antes do anoitecer.
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, false, 1)">
+                        <strong>B)</strong> O embaixador permaneceu na sede da ONU por mais de três horas seguidas.
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, true, 1)">
+                        <strong>C)</strong> Durante o julgamento, o réu permanecia impassível diante de todas as acusações.
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, false, 1)">
+                        <strong>D)</strong> As crianças viraram o balde de areia no meio da sala de estar.
+                    </div>
+                </div>
+                <div id="quiz-feedback-1" class="quiz-feedback" style="display: none;"></div>
+            </div>
+
+            <div class="quiz-section">
+                <h3 class="quiz-title"><i class="bi bi-question-circle"></i> Questão 2: Distinção Ser vs. Estar</h3>
+                <p class="mb-3">Qual alternativa melhor exemplifica a diferença entre "ser" (essência) e "estar" (contingência)?</p>
+                
+                <div id="quiz-area-2">
+                    <div class="option-card" onclick="checkQuiz(this, false, 2)">
+                        <strong>A)</strong> "Ele é cansado" e "Ele está cansado" significam exatamente a mesma coisa.
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, true, 2)">
+                        <strong>B)</strong> "Ele é cansado" sugere uma característica permanente; "Ele está cansado" indica um estado momentâneo.
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, false, 2)">
+                        <strong>C)</strong> "Estar" é sempre usado para localização; "Ser" é sempre usado para identidade.
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, false, 2)">
+                        <strong>D)</strong> Não há diferença prática entre "ser" e "estar" em português moderno.
+                    </div>
+                </div>
+                <div id="quiz-feedback-2" class="quiz-feedback" style="display: none;"></div>
+            </div>
+
+            <div class="quiz-section">
+                <h3 class="quiz-title"><i class="bi bi-question-circle"></i> Questão 3: Verbo de Ligação vs. Intransitivo</h3>
+                <p class="mb-3">Qual frase contém um verbo de ligação (não um intransitivo)?</p>
+                
+                <div id="quiz-area-3">
+                    <div class="option-card" onclick="checkQuiz(this, false, 3)">
+                        <strong>A)</strong> "Ele correu rapidamente pela floresta."
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, true, 3)">
+                        <strong>B)</strong> "Ela anda preocupada com os filhos."
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, false, 3)">
+                        <strong>C)</strong> "Nós partimos para a viagem."
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, false, 3)">
+                        <strong>D)</strong> "Eles voaram para Lisboa."
+                    </div>
+                </div>
+                <div id="quiz-feedback-3" class="quiz-feedback" style="display: none;"></div>
+            </div>
+
+            <div class="quiz-section">
+                <h3 class="quiz-title"><i class="bi bi-question-circle"></i> Questão 4: Tipos de Predicativo</h3>
+                <p class="mb-3">Qual alternativa apresenta um predicativo substantivo (não adjetivo)?</p>
+                
+                <div id="quiz-area-4">
+                    <div class="option-card" onclick="checkQuiz(this, false, 4)">
+                        <strong>A)</strong> "O dia está bonito e ensolarado."
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, true, 4)">
+                        <strong>B)</strong> "Meu avó é um grande engenheiro."
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, false, 4)">
+                        <strong>C)</strong> "A noite permanecia escura e silenciosa."
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, false, 4)">
+                        <strong>D)</strong> "Ela ficou muito mais feliz após a notícia."
+                    </div>
+                </div>
+                <div id="quiz-feedback-4" class="quiz-feedback" style="display: none;"></div>
+            </div>
+
+            <div class="quiz-section">
+                <h3 class="quiz-title"><i class="bi bi-question-circle"></i> Questão 5: Contexto de Ligação</h3>
+                <p class="mb-3">Em qual contexto o verbo "viver" funciona como verbo de ligação?</p>
+                
+                <div id="quiz-area-5">
+                    <div class="option-card" onclick="checkQuiz(this, false, 5)">
+                        <strong>A)</strong> "Ele vive em São Paulo há dez anos."
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, true, 5)">
+                        <strong>B)</strong> "Ela vive feliz com sua família."
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, false, 5)">
+                        <strong>C)</strong> "Nós vivemos de forma modesta."
+                    </div>
+                    <div class="option-card" onclick="checkQuiz(this, false, 5)">
+                        <strong>D)</strong> "Eles vivem do comércio."
+                    </div>
+                </div>
+                <div id="quiz-feedback-5" class="quiz-feedback" style="display: none;"></div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <h2 class="mb-3">Verbos de Ligação</h2>
+            <p class="h5 mb-4">Guia Completo da Língua Portuguesa</p>
+            <p class="mb-4" style="font-size: 1.02rem;">Este guia foi desenvolvido para oferecer uma compreensão clara e prática dos verbos de ligação, com exemplos reais e exercícios interativos para consolidar seu aprendizado.</p>
+            <p class="text-muted">Desenvolvido com rigor acadêmico — 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        // Barra de progresso dinâmica
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+
+        // Dark Mode Toggle
+        const themeBtn = document.getElementById('theme-toggle');
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.body.setAttribute('data-theme', targetTheme);
+            themeBtn.innerHTML = targetTheme === 'light' ? '<i class="bi bi-brightness-high"></i>' : '<i class="bi bi-moon-stars"></i>';
+            localStorage.setItem('theme', targetTheme);
+        });
+
+        // Restaurar tema salvo
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        themeBtn.innerHTML = savedTheme === 'light' ? '<i class="bi bi-brightness-high"></i>' : '<i class="bi bi-moon-stars"></i>';
+
+        // Scroll para o topo
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Lógica do Quiz Melhorada
+        function checkQuiz(el, isCorrect, quizNumber) {
+            const cards = document.querySelectorAll(`#quiz-area-${quizNumber} .option-card`);
+            const feedback = document.getElementById(`quiz-feedback-${quizNumber}`);
+            
+            cards.forEach(c => c.classList.remove('correct-ans', 'wrong-ans'));
+            feedback.style.display = 'none';
+            
+            if(isCorrect) {
+                el.classList.add('correct-ans');
+                
+                const feedbackTexts = {
+                    1: "✓ CORRETO! Na alternativa 'C', o verbo 'permanecia' conecta o sujeito 'réu' ao adjetivo 'impassível', estabelecendo uma relação de estado. Nas demais: (A) 'andavam' é intransitivo (ação), (B) 'permaneceu' é intransitivo (localização), (D) 'viraram' é transitivo (ação física).",
+                    2: "✓ CORRETO! Esta é a distinção fundamental em português. 'Ser cansado' sugere uma característica permanente ou traço de personalidade; 'estar cansado' indica um estado momentâneo e passageiro. Essa diferença é crucial para falar português com precisão.",
+                    3: "✓ CORRETO! Em 'Ela anda preocupada com os filhos', o verbo 'anda' funciona como ligação, conectando o sujeito ao adjetivo 'preocupada'. Indica um estado habitual ou prolongado. As demais alternativas contêm verbos intransitivos que descrevem ações.",
+                    4: "✓ CORRETO! 'Meu avó é um grande engenheiro' contém um predicativo substantivo ('engenheiro'). As demais alternativas têm predicativos adjetivos: 'bonito', 'escura', 'feliz'.",
+                    5: "✓ CORRETO! Em 'Ela vive feliz com sua família', 'viver' funciona como verbo de ligação, estabelecendo uma relação entre o sujeito e o estado 'feliz'. Nas demais: (A) é localização, (C) é modo de vida, (D) é profissão/sustento."
+                };
+                
+                feedback.innerHTML = feedbackTexts[quizNumber];
+                feedback.style.color = "#16a34a";
+                feedback.style.display = 'block';
+            } else {
+                el.classList.add('wrong-ans');
+                feedback.innerHTML = "✗ INCORRETO. Revise a análise desta alternativa. Dica: Um verbo de ligação estabelece uma relação entre sujeito e atributo, não descreve uma ação. Ele necessita de um predicativo para completar o sentido.";
+                feedback.style.color = "#dc2626";
+                feedback.style.display = 'block';
+            }
+        }
+
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
